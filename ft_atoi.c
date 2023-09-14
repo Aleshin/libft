@@ -24,7 +24,16 @@ int	white_space(char a)
 		|| a == '\v');
 }
 
-int	ft_atoi(char *str)
+int	plus_minus(const char *a, int *sign)
+{
+	if ((*(a + 1) == '-' || *(a + 1) == '+') && (*a == '-' || *a == '+'))
+		return (1);
+	if (*a == '-')
+		*sign = -1;
+	return (0);
+}
+
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
@@ -38,8 +47,8 @@ int	ft_atoi(char *str)
 	sign = 1;
 	while (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == '-')
-			sign *= -1;
+		if (plus_minus(&str[i], &sign))
+			return (0);
 		i++;
 	}
 	digits = 0;

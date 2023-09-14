@@ -16,7 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
