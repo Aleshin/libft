@@ -10,33 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-/*
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-*/
-size_t	ft_strlen(const char *str)
-{
-	size_t	res;
 
-	res = 0;
-	while (*str != '\0')
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+
+	i = 0;
+	if (dstsize > 0)
 	{
-		str++;
-		res++;
+		while (i < dstsize - 1 && src[i] != '\0')
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (res);
+	return (ft_strlen(src));
 }
-/*
-int	main(int argi, char **argv)
-{
-	char			*s1;
-
-	s1 = malloc(100 * sizeof(char));
-	s1 = argv[1];
-	argi = 0;
-	printf("%d\n", ft_strlen(s1));
-	printf("%lu\n", strlen(s1));
-	return (0);
-}
-*/
