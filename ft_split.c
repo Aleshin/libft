@@ -99,58 +99,6 @@ int	ft_count(char *s, char c)
 	return (j + 1);
 }
 
-char	**ft_split(char const *s, char c)
-{
-	char	**split;
-	int		i;
-	int		j;
-	int		k;
-	int		n;
-
-	n = ft_count(s, c);
-	split = (char *)malloc((n + 1) * sizeof(char));
-	if (split == NULL)
-		return (0);
-	i = 0;
-	j = 0;
-	while (s[i] != '\0')
-	{
-		while (j < n)
-		{
-			k = 0;
-			while (s[i] != c && !s[0] && !s[ft_strlen(s)])
-			{
-				split[j][k] = s[i];
-				i++;
-				k++;
-			}
-			j++
-		}
-
-		if (i > 0 && i < ft_strlen(s))
-		{
-			split[j][k] = s[i];
-		}
-		j = 0;
-
-		while (s[i] != c && !s[0] && !s[ft_strlen(s)])
-		{
-			split[i][j] = s[i];
-			k++;
-		}
-		if ()
-	}
-	if (!s1 || !set)
-		return (NULL);
-	start = 0;
-	end = ft_strlen((char *)s1);
-	while (s1[start] != '\0' && ft_strchr((char *) set, s1[start]))
-		start++;
-	while (end > 0 && ft_strchr((char *) set, s1[end]))
-		end--;
-	return (ft_substr(s1, start, end - start + 1));
-}
-
 int	main(int argc, char **argv)
 {
 	(void) argc;
